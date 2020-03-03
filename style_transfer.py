@@ -168,7 +168,7 @@ def main():
     postpb = transforms.Compose([transforms.ToPILImage()])
     
     #get network
-    vgg = get_vgg()
+    vgg = VGG()
     vgg.load_state_dict(torch.load(model_dir + 'vgg_conv.pth'))
     for param in vgg.parameters():
         param.requires_grad = False
