@@ -1,0 +1,6 @@
+python neural_style.py -content_image ../my_test/content.jpg -style_image ../my_test/style.jpg -output_image out1.png -style_scale 1.0 -image_size 1024 -gpu 0 -backend cudnn -cudnn_autotune -save_iter 1000 -print_iter 100 -num_iterations 1000
+
+
+python neural_style.py -content_image ../my_test/content.jpg -style_image ../my_test/style.jpg -output_image out1.png -style_scale 1.0 -image_size 1024 -gpu 0 -save_iter 1000 -print_iter 100 -num_iterations 1000 -cudnn_autotune
+
+-tv_weight 1e-1 -style_weight 1e8 -content_weight 1e1
