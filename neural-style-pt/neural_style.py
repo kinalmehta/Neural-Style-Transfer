@@ -271,9 +271,10 @@ def setup_optimizer(img):
         print("Running optimization with L-BFGS")
         optim_state = {
             'max_iter': params.num_iterations,
-            'tolerance_change': -1,
-            'tolerance_grad': -1,
         }
+        if params.image_size>512:
+            optim_state['tolerance_change'] = -1
+            optim_state['tolerance_grad'] = -1
         if params.lbfgs_num_correction != 100:
             optim_state['history_size'] = params.lbfgs_num_correction
         optimizer = optim.LBFGS([img], **optim_state)
